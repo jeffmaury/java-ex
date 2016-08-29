@@ -10,7 +10,7 @@
 <body>
  
 <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
-     url="jdbc:mysql://127.10.40.130/test"
+     url="jdbc:mysql://127.10.40.130/jbossas"
      user="adminrYadluh"  password="zNniQpBPWdxR"/>
 
 

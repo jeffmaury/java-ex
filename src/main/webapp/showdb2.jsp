@@ -8,10 +8,19 @@
 <title>SELECT Operation</title>
 </head>
 <body>
+
+String host = System.getenv("OPENSHIFT_MYSQL_DB_HOST");
+String port = System.getenv("OPENSHIFT_MYSQL_DB_PORT");
+String usr = System.getenv("OPENSHIFT_MYSQL_DB_USERNAME");
+String passwd = System.getenv("OPENSHIFT_MYSQL_DB_PASSWORD");
+
+<%=host%>
+<%=usr%>
+ <% out.println(passwd);%>
  
 <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
-     url="jdbc:mysql://127.10.40.130/jbossas
-     user="adminrYadluh"  password="zNniQpBPWdxR"/>
+     url="jdbc:mysql://" + host + "/jbossas"
+     user="+usr"  password="+passwd"/>
  
 <sql:query dataSource="${snapshot}" var="result">
 SELECT * from Employees;

@@ -5,13 +5,25 @@
  
 <html>
 <head>
-<title>SELECT Operation</title>
+<title>INSERT Operation</title>
 </head>
 <body>
  
+
+user envVar = process.env.OPENSHIFT_MYSQL_DB_USERNAME;
+password envVar = process.env.OPENSHIFT_MYSQL_DB_PASSWORD;
+db envVar = process.env.OPENSHIFT_APP_NAME;
+host envVar = process.env.OPENSHIFT_MYSQL_DB_HOST;
+
+
 <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
-     url="jdbc:mysql://127.10.40.130/jbossas
-     user="adminrYadluh"  password="zNniQpBPWdxR"/>
+     url="jdbc:mysql://$host/$db"
+     user="$user"  password="$password"/>
+
+
+<sql:update dataSource="${snapshot}" var="result">
+INSERT INTO Employees VALUES (104, 2, 'Ashish', 'Nabira');
+</sql:update>
  
 <sql:query dataSource="${snapshot}" var="result">
 SELECT * from Employees;

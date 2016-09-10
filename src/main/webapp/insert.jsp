@@ -5,7 +5,7 @@
  
 <html>
 <head>
-<title>JINSERT Operation</title>
+<title>INSERT Operation</title>
 </head>
 <body>
  

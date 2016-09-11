@@ -31,7 +31,7 @@
   <repositories>
     <repository>
       <id>redhat-ga</id>
-      <url> https://maven.repository.redhat.com/ga/</url>
+      <url> https://maven.repository.redhat.com/earlyaccess/all</url>
     </repository>
  </repositories>
   <profiles>
